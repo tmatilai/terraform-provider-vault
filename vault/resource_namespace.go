@@ -26,7 +26,6 @@ const (
 func namespaceResource() *schema.Resource {
 	return &schema.Resource{
 		Create: namespaceCreate,
-		Update: namespaceCreate,
 		Delete: namespaceDelete,
 		Read:   ReadWrapper(namespaceRead),
 		Importer: &schema.ResourceImporter{
@@ -49,7 +48,6 @@ func namespaceResource() *schema.Resource {
 			consts.FieldPathFQ: {
 				Type:        schema.TypeString,
 				Computed:    true,
-				Optional:    true,
 				Description: "The fully qualified namespace path.",
 			},
 		},
